@@ -7,15 +7,9 @@
 		.container
 			.row.centered
 				.align-center
-					= image_tag @picture.image, :class => 'img-thumbnail'
-
-					Score:
-					\#{@picture.score}
-					%br/
-					%br/
-					= link_to 'Like', score_picture_path(@picture), :class => 'btn btn-primary'
-				%br/
-				%p.pull-left <i>Not your capybara</i>? What kind of Capybara are you looking for?
+					#pictures
+						= render @pictures
+				%h6.pull-left.not_your_capybara <i>Not your capybara</i>? What kind of Capybara are you looking for?
 
 				= form_tag(search_pictures_path, method: "get") do
 					= text_field_tag :s, nil, :class => 'pull-left form-control search-bar', :placeholder => 'sad, awesome, etc...'

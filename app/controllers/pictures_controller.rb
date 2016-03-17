@@ -2,11 +2,11 @@ class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pictures = Picture.all
+    @pictures = Picture.limit(10)
   end
 
   def home
-    @picture = Picture.where("created_at >= ?", Time.zone.now.beginning_of_day).first
+    @pictures = Picture.where("created_at >= ?", Time.zone.now.beginning_of_day).first
   end
 
   def show
@@ -56,7 +56,9 @@ class PicturesController < ApplicationController
   def score
     @picture = Picture.find(params[:id])
     @picture.update_attributes(:score => @picture.score + 1)
-    redirect_to pictures_path
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   def search

@@ -1,0 +1,7 @@
+%h2.pull-left.index= 1
+.pull-left= image_tag picture.image, :class => 'img-thumbnail'
+.pull-left{:class => 'likes-' + picture.id.to_s}
+	= picture.score.to_s + ' Likes'
+.pull-left
+	%br/
+	= link_to 'Like', score_picture_path(picture), :class => 'btn btn-primary score', remote: true
