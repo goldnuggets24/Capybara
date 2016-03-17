@@ -26,7 +26,7 @@ gem 'whenever', :require => false
 # bootstrap
 gem "twitter-bootstrap-rails"
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
