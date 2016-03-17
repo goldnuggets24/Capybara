@@ -20,6 +20,7 @@ namespace :capybara do
 		unless images_from_last_week.include?(image)
 			picture = Picture.new(:image => image)
 			picture.save
+			puts "new capybara saved"
 		else
 			Rake::Task["capybara:purge_capybara"].execute
 		end

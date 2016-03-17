@@ -23,6 +23,7 @@ class PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
     respond_to do |format|
       if @picture.save
+        @picture.update_attributes(:score => 1)
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
         format.json { render :show, status: :created, location: @picture }
       else
