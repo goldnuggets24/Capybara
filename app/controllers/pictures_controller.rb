@@ -62,7 +62,7 @@ class PicturesController < ApplicationController
   def search
     s = params[:s]
     low = Random.new.rand(0..100)
-    results = GoogleCustomSearchApi.search("capybara", {"searchType" => "image", "num" => "10", "imgSize" => "large", "LowRange" => low, "highRange" => low + 9, "hq" => s})
+    results = GoogleCustomSearchApi.search("capybara", {"searchType" => "image", "num" => "10", "imgSize" => "huge", "LowRange" => low, "highRange" => low + 9, "hq" => s})
     r = Random.new.rand(0..9)
     @picture = results.items[r].image.thumbnailLink
   end
