@@ -24,7 +24,7 @@ class PicturesController < ApplicationController
     respond_to do |format|
       if @picture.save
         @picture.update_attributes(:score => 1)
-        format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
+        format.html { redirect_to pictures_path, notice: 'Picture was successfully created.' }
         format.json { render :show, status: :created, location: @picture }
       else
         format.html { render :new }

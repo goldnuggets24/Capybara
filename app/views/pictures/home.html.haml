@@ -1,0 +1,22 @@
+%p#notice= notice
+
+.container
+	.row
+		.jumbotron 
+			%h1.text-center Today's Capybara
+		.container
+			.row.centered
+				.align-center
+					= image_tag @picture.image, :class => 'img-thumbnail'
+
+					Score:
+					\#{@picture.score}
+					%br/
+					%br/
+					= link_to 'Like', score_picture_path(@picture), :class => 'btn btn-primary'
+				%br/
+				%p.pull-left <i>Not your capybara</i>? What kind of Capybara are you looking for?
+
+				= form_tag(search_pictures_path, method: "get") do
+					= text_field_tag :s, nil, :class => 'pull-left form-control search-bar', :placeholder => 'sad, awesome, etc...'
+					= submit_tag "Search", class: 'pull-left btn btn-primary'

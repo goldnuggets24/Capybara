@@ -1,0 +1,19 @@
+%p#notice= notice
+
+.container
+  .row
+    .jumbotron 
+      %h1.text-center
+        This is an image of a <pre>#{params[:s]}</pre> capybara
+
+  = image_tag @picture, :class => 'img-thumbnail'
+  = form_tag('/pictures')
+  = hidden_field_tag 'picture[image]', @picture
+  %br/
+%div= submit_tag 'Like', :class => 'btn btn-primary'
+%br/
+.row.collapse
+  Look for a different kind of Capybara?
+  = form_tag(search_pictures_path, method: "get") do
+    = text_field_tag :s, nil, :class => 'pull-left form-control search-bar'
+    = submit_tag "Search", class: 'pull-left btn btn-primary'

@@ -1,0 +1,18 @@
+%p#notice= notice
+%h1 Capybara of the Day
+%p
+  = image_tag(@picture.image)
+  %br/
+  Score:
+  \#{@picture.score}
+  (#{link_to 'Like', score_picture_path(@picture)})
+  %br/
+  %br/
+  What Kind of Capybara are you looking for?
+.row.collapse
+  = form_tag(search_pictures_path, method: "get") do
+    .large-8.small-9.columns
+      = text_field_tag(:s)
+    .large-4.small-3.columns
+      = submit_tag("Search")
+= link_to "View Top 10", pictures_path

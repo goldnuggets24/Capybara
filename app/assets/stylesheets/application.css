@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+.row .container {padding-top: 50px;}
+
+.col-md-6 {min-height: 148px;}
+
+a:visited {color: #fff;}
+
+.centered {margin: auto; max-width: 420px;}
+
+.index {margin-right: 10px;}
+
+pre {
+	margin: 16px auto;
+	width: 50%;
+	padding: 14px;
+}
+
+.img-thumbnail {margin-right: 10px;}
+
+.likes {margin-bottom: 10px;}
+
+.search-bar {width: 50%; margin-right: 10px;}

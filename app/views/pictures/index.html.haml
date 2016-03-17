@@ -1,0 +1,14 @@
+%p#notice= notice
+.container
+  .row
+    .jumbotron
+      %h1.text-center Top Ten Capybaras
+    .container
+      - @pictures.limit(10).each_with_index do |picture, index|
+        .col-md-6
+          %h2.pull-left.index= index + 1
+          .pull-left= image_tag picture.image, :class => 'img-thumbnail'
+          .pull-left
+            .likes= picture.score.to_s + ' Likes'
+            %br/
+            = link_to 'Like', score_picture_path(picture), :class => 'btn btn-primary'
