@@ -21,7 +21,7 @@ class PicturesControllerTest < ActionController::TestCase
       post :create, picture: { image: @picture.image, score: @picture.score }
     end
 
-    assert_redirected_to picture_path(assigns(:picture))
+    assert_redirected_to picture_path
   end
 
   test "should show picture" do
