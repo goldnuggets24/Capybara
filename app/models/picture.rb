@@ -1,5 +1,9 @@
 class Picture < ActiveRecord::Base
-	default_scope { order("score DESC") }
+	scope :top_ten, -> {order('score DESC')}
+
+	def self.home
+		where("created_at >= ? AND created_at < ?", Date.today, Date.tomorrow).order('created_at ASC')
+  	end
 
 	def self.daily_capybara(s)
 		low = Random.new.rand(0..100)

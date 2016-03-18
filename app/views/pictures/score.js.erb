@@ -1,4 +1,4 @@
-<% Picture.limit(10).each_with_index do |p,index| %>
+<% @pictures.each_with_index do |p,index| %>
 $('.top-ten-image-<%= index %>').attr('src', '<%= Picture.find(p.id).image %>');
 $('.likes-<%= index %>').html('<%= Picture.find(p.id).score %> Likes');
 $('a.score-<%= index %>').attr('href','/pictures/<%= p.id %>/score');

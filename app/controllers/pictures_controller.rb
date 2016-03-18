@@ -2,11 +2,11 @@ class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pictures = Picture.limit(10)
+    @pictures = Picture.top_ten.limit(10)
   end
 
   def home
-    @pictures = Picture.where("created_at >= ?", Time.zone.now.beginning_of_day).limit(1)
+    @pictures = Picture.home.limit(1)
   end
 
   def show
@@ -54,6 +54,7 @@ class PicturesController < ApplicationController
   end
 
   def score
+    @pictures = params[:id] == Picture.home.limit(1).first.id.to_s ? Picture.home : Picture.top_ten
     @picture = Picture.find(params[:id])
     @picture.update_attributes(:score => @picture.score + 1)
     respond_to do |format|
