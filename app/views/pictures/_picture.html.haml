@@ -1,6 +1,6 @@
 .col-md-6
 	%h2.pull-left.index= picture_counter + 1
-	.pull-left= image_tag picture.image, :class => 'img-thumbnail'
+	.pull-left= image_tag picture.image, :class => 'img-thumbnail top-ten-image'
 	.pull-left
 		.pull-left{:class => 'likes-' + picture.id.to_s}
 			= picture.score.to_s + ' Likes'
