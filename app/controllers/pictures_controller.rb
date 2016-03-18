@@ -54,8 +54,9 @@ class PicturesController < ApplicationController
   end
 
   def score
-    @pictures = params[:id] == Picture.home.limit(1).first.id.to_s ? Picture.home : Picture.top_ten
+    @pictures = params[:page] == 'home' ? Picture.home : Picture.top_ten
     @picture = Picture.find(params[:id])
+    @page = params[:page]
     @picture.update_attributes(:score => @picture.score + 1)
     respond_to do |format|
       format.js {}

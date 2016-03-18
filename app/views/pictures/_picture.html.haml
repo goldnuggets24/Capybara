@@ -5,4 +5,4 @@
 		.pull-left{:class => 'likes-' + picture_counter.to_s}
 			= picture.score.to_s + ' Likes'
 		%br/
-		= link_to 'Like', score_picture_path(picture), :class => 'btn btn-primary score-' + picture_counter.to_s, remote: true
+		= link_to 'Like', score_picture_path(picture, :page => params[:action]), :class => 'btn btn-primary score-' + picture_counter.to_s, remote: true
