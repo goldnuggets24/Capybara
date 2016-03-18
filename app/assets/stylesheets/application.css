@@ -32,10 +32,12 @@ pre {
 	padding: 14px;
 }
 
-.img-thumbnail {margin-right: 10px;}
+.img-thumbnail {margin: 0 10px 20px 0;}
 
 .likes {margin-bottom: 10px;}
 
 .search-bar {width: 50%; margin-right: 10px;}
 
 .not_your_capybara {margin-top: 30px;}
+
+.home .index {display: none;}

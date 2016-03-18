@@ -6,7 +6,7 @@ class PicturesController < ApplicationController
   end
 
   def home
-    @pictures = Picture.where("created_at >= ?", Time.zone.now.beginning_of_day).first
+    @pictures = Picture.where("created_at >= ?", Time.zone.now.beginning_of_day).limit(1)
   end
 
   def show
