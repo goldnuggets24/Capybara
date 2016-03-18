@@ -11,6 +11,6 @@
 						= render @pictures
 				%h6.pull-left.not_your_capybara <i>Not your capybara</i>? What kind of Capybara are you looking for?
 
-				= form_tag(search_pictures_path, method: "get") do
+				%form{:action => search_pictures_path, method: 'get'}
 					= text_field_tag :s, nil, :class => 'pull-left form-control search-bar', :placeholder => 'sad, awesome, etc...'
-					= submit_tag "Search", class: 'pull-left btn btn-primary'
+					= submit_tag 'Search', class: 'pull-left btn btn-primary', name: nil
