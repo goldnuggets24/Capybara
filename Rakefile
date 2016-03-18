@@ -6,11 +6,8 @@ namespace :capybara do
 	desc "Purge stale capybara and serve new one"
 	task purge_capybara: :environment do
 		puts "Purging old capybara..."
-		
-		low = Random.new.rand(0..100)
-		results = GoogleCustomSearchApi.search("capybara", {"searchType" => "image", "num" => "10", "imgSize" => "huge", "LowRange" => low, "highRange" => low + 9})
-		r = Random.new.rand(0..9)
-		image = results.items[r].image.thumbnailLink
+
+	 	image = Picture.daily_capybara('')
 		
 		images_from_last_week = Array.new
 		Picture.where("created_at >= ?", 1.week.ago.utc).each do |picture|
