@@ -1,1 +1,2 @@
 $('.likes-<%= @picture.id %>').html('<%= @picture.score %> Likes');
+$("#pictures").html('<%= escape_javascript(render :partial => "picture", :locals => { :pictures => @pictures}) %>');

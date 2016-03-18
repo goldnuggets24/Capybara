@@ -32,7 +32,10 @@ pre {
 	padding: 14px;
 }
 
-.img-thumbnail {margin: 0 10px 20px 0;}
+.img-thumbnail {
+	margin: 0 10px 20px 0;
+	height: 100px;
+}
 
 .likes {margin-bottom: 10px;}
 
