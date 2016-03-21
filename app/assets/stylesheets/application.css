@@ -44,3 +44,8 @@ pre {
 .not_your_capybara {margin-top: 30px;}
 
 .home .index {display: none;}
+
+@media (max-width: 768px) {
+	.col-md-6 {clear: both;}
+	.nav>li {float: left;}
+}
